@@ -9,5 +9,4 @@ const displayQuote = (quote) => {
     blockQuote.innerHTML = quote.quote;
 }
 
-
 loadQuote();

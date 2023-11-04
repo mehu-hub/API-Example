@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Users</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <section class="container mx-auto">
+        <h1 class="text-center text-3xl mt-5 font-bold text-gray-600">Looking for Random User - Male</h1>
+        <div class="flex justify-center mt-10">
+            <div class="bg-teal-600 w-1/4 p-5 rounded">
+                <div>
+                    <img id="img" src="" alt="">
+                </div>
+                <h2 class="text-2xl text-white font-semibold">Name: <span id="name" class="text-white-600"></span></h2>
+                <h2 class="text-xl text-white font-semibold">Gender: <span id="gender" class="text-white-600"></span>
+                </h2>
+                <h2 class="text-xl text-white font-semibold">City: <span id="city" class="text-white-600"></span></h2>
+                <h2 class="text-xl text-white font-semibold">Post Code: <span id="post-code"
+                        class="text-white-600"></span></h2>
+                <div class="mt-5">
+                    <button class="bg-gray-600 text-white p-2 px-5 rounded" onclick="loadUser()">Get New</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="JS/random-user.js"></script>
+</body>
+
+</html>
