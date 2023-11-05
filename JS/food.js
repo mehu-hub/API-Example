@@ -19,7 +19,7 @@ const displayMeals = meals => {
                     <p class="card-text"></p>
                 </div>
                 <div class="p-2">
-                    <button onclick="loadMealDetails(${meal.idMeal})" type="button" class="btn w-50 btn-primary" data-bs-toggle="modal" data-bs-target="#mealDetails">
+                    <button onclick="loadMealDetails2(${meal.idMeal})" type="button" class="btn w-50 btn-primary" data-bs-toggle="modal" data-bs-target="#mealDetails">
                         Meal Details
                     </button> 
                 </div>  
@@ -37,14 +37,30 @@ const searchMeals = () => {
 }
 
 
-const loadMealDetails = idMeal =>{
+const loadMealDetails = idMeal => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
     fetch(url)
-    .then(res => res.json())
-    .then(data => displayMealDetails(data.meals[0]))
+        .then(res => res.json())
+        .then(data => displayMealDetails(data.meals[0]))
+        .catch(error => {
+            console.log(error)
+        })
+
 }
 
-const displayMealDetails = meal =>{
+const loadMealDetails2 = async (idMeal) => {
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayMealDetails(data.meals[0]);                      
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
+
+const displayMealDetails = meal => {
     document.getElementById('mealDetailsLabel').innerText = meal.strMeal;
     const mealDetails = document.getElementById('mealDetailsBody');
     mealDetails.innerHTML = `
